@@ -1,0 +1,139 @@
+{
+  "source_reference": "Ives (2015), Figure 3.4, p. 53; span assumption p. 52",
+  "scope": "Topology and routing only; no optical feasibility or wavelength allocation",
+  "span_length_km": 80,
+  "nodes": [
+    "WA",
+    "C1",
+    "C2",
+    "UT",
+    "CO",
+    "NE",
+    "IL",
+    "MI",
+    "PA",
+    "NY",
+    "NJ",
+    "DC",
+    "TX",
+    "GA"
+  ],
+  "links": [
+    {
+      "source": "WA",
+      "target": "C1",
+      "length_km": 1520
+    },
+    {
+      "source": "WA",
+      "target": "C2",
+      "length_km": 2160
+    },
+    {
+      "source": "WA",
+      "target": "IL",
+      "length_km": 3520
+    },
+    {
+      "source": "C1",
+      "target": "C2",
+      "length_km": 1040
+    },
+    {
+      "source": "C1",
+      "target": "UT",
+      "length_km": 1440
+    },
+    {
+      "source": "C2",
+      "target": "TX",
+      "length_km": 2640
+    },
+    {
+      "source": "UT",
+      "target": "CO",
+      "length_km": 880
+    },
+    {
+      "source": "UT",
+      "target": "MI",
+      "length_km": 2960
+    },
+    {
+      "source": "CO",
+      "target": "NE",
+      "length_km": 1120
+    },
+    {
+      "source": "CO",
+      "target": "TX",
+      "length_km": 1840
+    },
+    {
+      "source": "NE",
+      "target": "IL",
+      "length_km": 1040
+    },
+    {
+      "source": "IL",
+      "target": "PA",
+      "length_km": 1040
+    },
+    {
+      "source": "MI",
+      "target": "NY",
+      "length_km": 880
+    },
+    {
+      "source": "MI",
+      "target": "NJ",
+      "length_km": 1200
+    },
+    {
+      "source": "PA",
+      "target": "NY",
+      "length_km": 560
+    },
+    {
+      "source": "PA",
+      "target": "NJ",
+      "length_km": 640
+    },
+    {
+      "source": "PA",
+      "target": "GA",
+      "length_km": 1280
+    },
+    {
+      "source": "NY",
+      "target": "DC",
+      "length_km": 560
+    },
+    {
+      "source": "NJ",
+      "target": "DC",
+      "length_km": 400
+    },
+    {
+      "source": "DC",
+      "target": "TX",
+      "length_km": 2480
+    },
+    {
+      "source": "TX",
+      "target": "GA",
+      "length_km": 1520
+    }
+  ],
+  "source": "WA",
+  "destination": "NY",
+  "shortest_route": [
+    "WA",
+    "IL",
+    "PA",
+    "NY"
+  ],
+  "route_length_km": 5120,
+  "route_link_count": 3,
+  "route_span_count": 64
+}

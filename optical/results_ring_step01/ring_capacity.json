@@ -1,0 +1,615 @@
+{
+  "model": {
+    "reference_distance_km": 400.0,
+    "snr_400_db": 21.08263901814839,
+    "snr_source": "reference_gn",
+    "launch_power_dbm_per_channel": -1.435878576860794,
+    "span_length_km": 80.0,
+    "bandwidth_ghz_per_link": 128.0,
+    "wavelengths_per_link": 4,
+    "bandwidth_ghz_per_wavelength": 32.0,
+    "gn_reference": {
+      "operating_point": "Full-load central WDM channel at the 400 km optimal launch power",
+      "noise_model": "ASE, coherent SPM within the reference link, linearly accumulated XPM",
+      "parameters": {
+        "alpha_db_per_km": 0.22,
+        "span_length_km": 80.0,
+        "gamma_per_w_km": 1.3,
+        "beta2_abs_s2_per_km": 2.13e-23,
+        "carrier_frequency_hz": 193500000000000.0,
+        "symbol_rate_baud": 32000000000.0,
+        "channel_spacing_hz": 50000000000.0,
+        "channel_count": 80,
+        "noise_figure_db": 5.0
+      }
+    },
+    "routing": "Fixed shortest-distance path for each request in arrival order",
+    "snr_accumulation": "Independent link noise at equal signal power, inverse linear SNRs add",
+    "wavelength_snr": "Each assignable wavelength uses the same reference SNR at fixed spectral efficiency",
+    "capacity": "Ideal dual-polarization Shannon rate, 2 * B_GHz * log2(1 + SNR_linear) in Gbit/s",
+    "allocation": "First-fit wavelength common to all links on a request's path. Each accepted request uses one whole wavelength. Both directions share the same physical link slots.",
+    "slot_key": "wavelength_slots is ordered from lambda 1, with the request ID or null for a free slot"
+  },
+  "route_comparison": [
+    {
+      "path": [
+        "A",
+        "B",
+        "C"
+      ],
+      "length_km": 800.0,
+      "spans": 10,
+      "snr_linear": 64.15550179089692,
+      "snr_db": 18.07233906150858,
+      "spectral_efficiency_bps_hz": 12.051630202658938,
+      "full_band_capacity_gbps": 1542.608665940344,
+      "wavelength_capacity_gbps": 385.652166485086
+    },
+    {
+      "path": [
+        "A",
+        "E",
+        "D",
+        "C"
+      ],
+      "length_km": 1200.0,
+      "spans": 15,
+      "snr_linear": 42.770334527264616,
+      "snr_db": 16.31142647095177,
+      "spectral_efficiency_bps_hz": 10.90376301022951,
+      "full_band_capacity_gbps": 1395.6816653093772,
+      "wavelength_capacity_gbps": 348.9204163273443
+    }
+  ],
+  "requests": [
+    {
+      "id": "R1",
+      "source": "A",
+      "target": "B",
+      "path": [
+        "A",
+        "B"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "spectral_efficiency_bps_hz": 14.029402469481388,
+      "full_band_capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "status": "accepted",
+      "wavelength": 1,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 448.9408790234044,
+      "blocking_reason": null
+    },
+    {
+      "id": "R2",
+      "source": "A",
+      "target": "C",
+      "path": [
+        "A",
+        "B",
+        "C"
+      ],
+      "length_km": 800.0,
+      "spans": 10,
+      "snr_linear": 64.15550179089692,
+      "snr_db": 18.07233906150858,
+      "spectral_efficiency_bps_hz": 12.051630202658938,
+      "full_band_capacity_gbps": 1542.608665940344,
+      "wavelength_capacity_gbps": 385.652166485086,
+      "status": "accepted",
+      "wavelength": 2,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 385.652166485086,
+      "blocking_reason": null
+    },
+    {
+      "id": "R3",
+      "source": "E",
+      "target": "B",
+      "path": [
+        "E",
+        "A",
+        "B"
+      ],
+      "length_km": 800.0,
+      "spans": 10,
+      "snr_linear": 64.15550179089692,
+      "snr_db": 18.07233906150858,
+      "spectral_efficiency_bps_hz": 12.051630202658938,
+      "full_band_capacity_gbps": 1542.608665940344,
+      "wavelength_capacity_gbps": 385.652166485086,
+      "status": "accepted",
+      "wavelength": 3,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 385.652166485086,
+      "blocking_reason": null
+    },
+    {
+      "id": "R4",
+      "source": "A",
+      "target": "E",
+      "path": [
+        "A",
+        "E"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "spectral_efficiency_bps_hz": 14.029402469481388,
+      "full_band_capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "status": "accepted",
+      "wavelength": 1,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 448.9408790234044,
+      "blocking_reason": null
+    },
+    {
+      "id": "R5",
+      "source": "E",
+      "target": "C",
+      "path": [
+        "E",
+        "D",
+        "C"
+      ],
+      "length_km": 800.0,
+      "spans": 10,
+      "snr_linear": 64.15550179089692,
+      "snr_db": 18.07233906150858,
+      "spectral_efficiency_bps_hz": 12.051630202658938,
+      "full_band_capacity_gbps": 1542.608665940344,
+      "wavelength_capacity_gbps": 385.652166485086,
+      "status": "accepted",
+      "wavelength": 1,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 385.652166485086,
+      "blocking_reason": null
+    },
+    {
+      "id": "R6",
+      "source": "D",
+      "target": "B",
+      "path": [
+        "D",
+        "C",
+        "B"
+      ],
+      "length_km": 800.0,
+      "spans": 10,
+      "snr_linear": 64.15550179089692,
+      "snr_db": 18.07233906150858,
+      "spectral_efficiency_bps_hz": 12.051630202658938,
+      "full_band_capacity_gbps": 1542.608665940344,
+      "wavelength_capacity_gbps": 385.652166485086,
+      "status": "accepted",
+      "wavelength": 3,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 385.652166485086,
+      "blocking_reason": null
+    },
+    {
+      "id": "R7",
+      "source": "C",
+      "target": "E",
+      "path": [
+        "C",
+        "D",
+        "E"
+      ],
+      "length_km": 800.0,
+      "spans": 10,
+      "snr_linear": 64.15550179089692,
+      "snr_db": 18.07233906150858,
+      "spectral_efficiency_bps_hz": 12.051630202658938,
+      "full_band_capacity_gbps": 1542.608665940344,
+      "wavelength_capacity_gbps": 385.652166485086,
+      "status": "accepted",
+      "wavelength": 2,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 385.652166485086,
+      "blocking_reason": null
+    },
+    {
+      "id": "R8",
+      "source": "C",
+      "target": "B",
+      "path": [
+        "C",
+        "B"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "spectral_efficiency_bps_hz": 14.029402469481388,
+      "full_band_capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "status": "accepted",
+      "wavelength": 1,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 448.9408790234044,
+      "blocking_reason": null
+    },
+    {
+      "id": "R9",
+      "source": "A",
+      "target": "D",
+      "path": [
+        "A",
+        "E",
+        "D"
+      ],
+      "length_km": 800.0,
+      "spans": 10,
+      "snr_linear": 64.15550179089692,
+      "snr_db": 18.07233906150858,
+      "spectral_efficiency_bps_hz": 12.051630202658938,
+      "full_band_capacity_gbps": 1542.608665940344,
+      "wavelength_capacity_gbps": 385.652166485086,
+      "status": "accepted",
+      "wavelength": 4,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 385.652166485086,
+      "blocking_reason": null
+    },
+    {
+      "id": "R10",
+      "source": "D",
+      "target": "C",
+      "path": [
+        "D",
+        "C"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "spectral_efficiency_bps_hz": 14.029402469481388,
+      "full_band_capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "status": "accepted",
+      "wavelength": 4,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 448.9408790234044,
+      "blocking_reason": null
+    },
+    {
+      "id": "R11",
+      "source": "D",
+      "target": "E",
+      "path": [
+        "D",
+        "E"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "spectral_efficiency_bps_hz": 14.029402469481388,
+      "full_band_capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "status": "accepted",
+      "wavelength": 3,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 448.9408790234044,
+      "blocking_reason": null
+    },
+    {
+      "id": "R12",
+      "source": "B",
+      "target": "A",
+      "path": [
+        "B",
+        "A"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "spectral_efficiency_bps_hz": 14.029402469481388,
+      "full_band_capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "status": "accepted",
+      "wavelength": 4,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 448.9408790234044,
+      "blocking_reason": null
+    },
+    {
+      "id": "R13",
+      "source": "B",
+      "target": "C",
+      "path": [
+        "B",
+        "C"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "spectral_efficiency_bps_hz": 14.029402469481388,
+      "full_band_capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "status": "accepted",
+      "wavelength": 4,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 448.9408790234044,
+      "blocking_reason": null
+    },
+    {
+      "id": "R14",
+      "source": "B",
+      "target": "D",
+      "path": [
+        "B",
+        "C",
+        "D"
+      ],
+      "length_km": 800.0,
+      "spans": 10,
+      "snr_linear": 64.15550179089692,
+      "snr_db": 18.07233906150858,
+      "spectral_efficiency_bps_hz": 12.051630202658938,
+      "full_band_capacity_gbps": 1542.608665940344,
+      "wavelength_capacity_gbps": 385.652166485086,
+      "status": "blocked",
+      "wavelength": null,
+      "allocated_bandwidth_ghz": 0.0,
+      "allocated_capacity_gbps": 0.0,
+      "blocking_reason": "No common free wavelength on the shortest path"
+    },
+    {
+      "id": "R15",
+      "source": "B",
+      "target": "E",
+      "path": [
+        "B",
+        "A",
+        "E"
+      ],
+      "length_km": 800.0,
+      "spans": 10,
+      "snr_linear": 64.15550179089692,
+      "snr_db": 18.07233906150858,
+      "spectral_efficiency_bps_hz": 12.051630202658938,
+      "full_band_capacity_gbps": 1542.608665940344,
+      "wavelength_capacity_gbps": 385.652166485086,
+      "status": "blocked",
+      "wavelength": null,
+      "allocated_bandwidth_ghz": 0.0,
+      "allocated_capacity_gbps": 0.0,
+      "blocking_reason": "No common free wavelength on the shortest path"
+    },
+    {
+      "id": "R16",
+      "source": "C",
+      "target": "A",
+      "path": [
+        "C",
+        "B",
+        "A"
+      ],
+      "length_km": 800.0,
+      "spans": 10,
+      "snr_linear": 64.15550179089692,
+      "snr_db": 18.07233906150858,
+      "spectral_efficiency_bps_hz": 12.051630202658938,
+      "full_band_capacity_gbps": 1542.608665940344,
+      "wavelength_capacity_gbps": 385.652166485086,
+      "status": "blocked",
+      "wavelength": null,
+      "allocated_bandwidth_ghz": 0.0,
+      "allocated_capacity_gbps": 0.0,
+      "blocking_reason": "No common free wavelength on the shortest path"
+    },
+    {
+      "id": "R17",
+      "source": "C",
+      "target": "D",
+      "path": [
+        "C",
+        "D"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "spectral_efficiency_bps_hz": 14.029402469481388,
+      "full_band_capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "status": "blocked",
+      "wavelength": null,
+      "allocated_bandwidth_ghz": 0.0,
+      "allocated_capacity_gbps": 0.0,
+      "blocking_reason": "No common free wavelength on the shortest path"
+    },
+    {
+      "id": "R18",
+      "source": "D",
+      "target": "A",
+      "path": [
+        "D",
+        "E",
+        "A"
+      ],
+      "length_km": 800.0,
+      "spans": 10,
+      "snr_linear": 64.15550179089692,
+      "snr_db": 18.07233906150858,
+      "spectral_efficiency_bps_hz": 12.051630202658938,
+      "full_band_capacity_gbps": 1542.608665940344,
+      "wavelength_capacity_gbps": 385.652166485086,
+      "status": "blocked",
+      "wavelength": null,
+      "allocated_bandwidth_ghz": 0.0,
+      "allocated_capacity_gbps": 0.0,
+      "blocking_reason": "No common free wavelength on the shortest path"
+    },
+    {
+      "id": "R19",
+      "source": "E",
+      "target": "A",
+      "path": [
+        "E",
+        "A"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "spectral_efficiency_bps_hz": 14.029402469481388,
+      "full_band_capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "status": "accepted",
+      "wavelength": 2,
+      "allocated_bandwidth_ghz": 32.0,
+      "allocated_capacity_gbps": 448.9408790234044,
+      "blocking_reason": null
+    },
+    {
+      "id": "R20",
+      "source": "E",
+      "target": "D",
+      "path": [
+        "E",
+        "D"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "spectral_efficiency_bps_hz": 14.029402469481388,
+      "full_band_capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "status": "blocked",
+      "wavelength": null,
+      "allocated_bandwidth_ghz": 0.0,
+      "allocated_capacity_gbps": 0.0,
+      "blocking_reason": "No common free wavelength on the shortest path"
+    }
+  ],
+  "accepted_count": 14,
+  "blocked_count": 6,
+  "links": [
+    {
+      "nodes": [
+        "A",
+        "B"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "bandwidth_ghz": 128.0,
+      "capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "wavelength_slots": [
+        "R1",
+        "R2",
+        "R3",
+        "R12"
+      ],
+      "occupied_wavelengths": 4,
+      "utilization": 1.0,
+      "used_bandwidth_ghz": 128.0,
+      "free_bandwidth_ghz": 0.0
+    },
+    {
+      "nodes": [
+        "A",
+        "E"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "bandwidth_ghz": 128.0,
+      "capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "wavelength_slots": [
+        "R4",
+        "R19",
+        "R3",
+        "R9"
+      ],
+      "occupied_wavelengths": 4,
+      "utilization": 1.0,
+      "used_bandwidth_ghz": 128.0,
+      "free_bandwidth_ghz": 0.0
+    },
+    {
+      "nodes": [
+        "B",
+        "C"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "bandwidth_ghz": 128.0,
+      "capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "wavelength_slots": [
+        "R8",
+        "R2",
+        "R6",
+        "R13"
+      ],
+      "occupied_wavelengths": 4,
+      "utilization": 1.0,
+      "used_bandwidth_ghz": 128.0,
+      "free_bandwidth_ghz": 0.0
+    },
+    {
+      "nodes": [
+        "C",
+        "D"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "bandwidth_ghz": 128.0,
+      "capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "wavelength_slots": [
+        "R5",
+        "R7",
+        "R6",
+        "R10"
+      ],
+      "occupied_wavelengths": 4,
+      "utilization": 1.0,
+      "used_bandwidth_ghz": 128.0,
+      "free_bandwidth_ghz": 0.0
+    },
+    {
+      "nodes": [
+        "D",
+        "E"
+      ],
+      "length_km": 400.0,
+      "spans": 5,
+      "snr_linear": 128.31100358179384,
+      "snr_db": 21.08263901814839,
+      "bandwidth_ghz": 128.0,
+      "capacity_gbps": 1795.7635160936177,
+      "wavelength_capacity_gbps": 448.9408790234044,
+      "wavelength_slots": [
+        "R5",
+        "R7",
+        "R11",
+        "R9"
+      ],
+      "occupied_wavelengths": 4,
+      "utilization": 1.0,
+      "used_bandwidth_ghz": 128.0,
+      "free_bandwidth_ghz": 0.0
+    }
+  ]
+}
